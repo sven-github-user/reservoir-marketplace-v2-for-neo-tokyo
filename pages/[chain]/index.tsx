@@ -61,14 +61,9 @@ const IndexPage: NextPage<Props> = ({ ssr }) => {
   )
 
   useEffect(() => {
-      console.log("gm");
-      console.log(collectionsData);
-      if (collectionsData && collectionsData[0]) {
-          console.log("gr");
-          router.push(`/collection/${collectionsData[0].id}`);
-      }
-  }, [collectionsData]);
-
+    console.log("gr");
+    router.push("/collection/0xb9951b43802dcf3ef5b14567cb17adf367ed1c0f");
+  }, []);
   
   const [topSellingCollections, setTopSellingCollections] = useState<
     ReturnType<typeof useTopSellingCollections>['data']
