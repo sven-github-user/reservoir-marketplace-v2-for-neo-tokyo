@@ -60,11 +60,6 @@ const IndexPage: NextPage<Props> = ({ ssr }) => {
     chain?.id
   )
 
-  useEffect(() => {
-    console.log("gr");
-    router.push("/ethereum/collection/0xb9951b43802dcf3ef5b14567cb17adf367ed1c0f");
-  }, []);
-  
   const [topSellingCollections, setTopSellingCollections] = useState<
     ReturnType<typeof useTopSellingCollections>['data']
   >(ssr.topSellingCollections[marketplaceChain.id])
@@ -279,6 +274,10 @@ export const getServerSideProps: GetServerSideProps<{
   return {
     props: { ssr: { topSellingCollections } },
   }
+
+  res.setHeader('Location', '/ethereum/collection/0xb9951b43802dcf3ef5b14567cb17adf367ed1c0f');
+  res.statusCode = 302;
+  return { props: {} };
 }
 
 export default IndexPage
