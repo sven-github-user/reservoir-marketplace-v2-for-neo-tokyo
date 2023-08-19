@@ -62,6 +62,7 @@ const IndexPage: NextPage<Props> = ({ ssr }) => {
 
   useEffect(() => {
       console.log("gm");
+      console.log(collectionsData);
       if (collectionsData && collectionsData[0]) {
           console.log("gr");
           router.push(`/collection/${collectionsData[0].id}`);
