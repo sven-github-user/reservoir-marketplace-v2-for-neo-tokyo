@@ -19,7 +19,6 @@ import { CollectionTopSellingTable } from 'components/home/CollectionTopSellingT
 import { FillTypeToggle } from 'components/home/FillTypeToggle'
 import { TimeFilterToggle } from 'components/home/TimeFilterToggle'
 import fetcher from 'utils/fetcher'
-import { useRouter } from 'next/router'
 
 type Props = InferGetServerSidePropsType<typeof getServerSideProps>
 
