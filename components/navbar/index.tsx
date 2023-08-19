@@ -98,7 +98,7 @@ const Navbar = () => {
     >
       <Box css={{ flex: 1 }}>
         <Flex align="center">
-          <Link href={`/${routePrefix}`}>
+          <Link href="/ethereum/collection/0xb9951b43802dcf3ef5b14567cb17adf367ed1c0f">  
             <Box css={{ width: 112, cursor: 'pointer' }}>
               {theme == 'dark' ? (
                 <Image
