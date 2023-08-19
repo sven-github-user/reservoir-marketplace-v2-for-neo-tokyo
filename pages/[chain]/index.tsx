@@ -19,6 +19,7 @@ import { CollectionTopSellingTable } from 'components/home/CollectionTopSellingT
 import { FillTypeToggle } from 'components/home/FillTypeToggle'
 import { TimeFilterToggle } from 'components/home/TimeFilterToggle'
 import fetcher from 'utils/fetcher'
+import { useRouter } from 'next/router'
 
 type Props = InferGetServerSidePropsType<typeof getServerSideProps>
 
@@ -60,6 +61,13 @@ const IndexPage: NextPage<Props> = ({ ssr }) => {
     chain?.id
   )
 
+  useEffect(() => {
+      if (collectionsData && collectionsData[0]) {
+          router.push(`/collection/${collectionsData[0].id}`);
+      }
+  }, [collectionsData]);
+
+  
   const [topSellingCollections, setTopSellingCollections] = useState<
     ReturnType<typeof useTopSellingCollections>['data']
   >(ssr.topSellingCollections[marketplaceChain.id])
